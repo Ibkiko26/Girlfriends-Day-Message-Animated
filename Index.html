@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Girlfriend's Day, Margaret!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #ff7eb3;
+            --secondary-color: #ff758c;
+            --text-color: #4a4a4a;
+            --bg-color: #fff0f3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Floating background elements */
+        .background-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: radial-gradient(circle at center, rgba(255, 117, 140, 0.1) 0%, rgba(253, 251, 251, 0) 70%);
+        }
+
+        .container {
+            max-width: 900px;
+            padding: 40px 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(255, 126, 179, 0.3);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .message-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255, 126, 179, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .message-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* Photo Gallery */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .photo-frame {
+            width: 250px;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 5px solid white;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1s forwards;
+        }
+
+        .photo-frame:nth-child(1) { animation-delay: 0.5s; }
+        .photo-frame:nth-child(2) { animation-delay: 0.8s; }
+        .photo-frame:nth-child(3) { animation-delay: 1.1s; }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-frame:hover img {
+            transform: scale(1.1);
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-top: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .photo-frame { width: 100%; max-width: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-hearts"></div>
+    
+    <div class="container">
+        <h1>Happy Girlfriend's Day, Margaret! 💖</h1>
+        
+        <div class="gallery">
+            <!-- Replace pic1.jpg, pic2.jpg, pic3.jpg with your actual image file names -->
+            <div class="photo-frame"><img src="Pic1.jpeg" alt="Beautiful Margaret"></div>
+            <div class="photo-frame"><img src="Pic2.jpeg" alt="Beautiful Margaret"></div>
+            <div class="photo-frame"><img src="Pic3.jpeg" alt="Beautiful Margaret"></div>
+            <div class="photo-frame"><img src="Pic4.jpeg" alt="Beautiful Margaret"></div>
+            <div class="photo-frame"><img src="Pic5.jpeg" alt="Beautiful Margaret"></div>
+            <div class="photo-frame"><img src="Pic6.jpeg" alt="Beautiful Margaret"></div>
+            <div class="photo-frame"><img src="Pic7.jpeg" alt="Beautiful Margaret"></div>
+            <div class="photo-frame"><img src="Pic8.jpeg" alt="Beautiful Margaret"></div>
+            <div class="photo-frame"><img src="Pic9.jpeg" alt="Beautiful Margaret"></div>
+            <div class="photo-frame"><img src="Pic10.jpeg" alt="Beautiful Margaret"></div>
+            <div class="photo-frame"><img src="Pic11.jpeg" alt="Beautiful Margaret"></div>
+        </div>
+
+        <div class="message-card">
+            <p>To my amazing Margaret Nyakio,</p><br>
+            <p>On this Girlfriend's Day, I just wanted to take a moment to celebrate <span class="highlight">you</span>. I wish you nothing but endless happiness, radiant good health, and massive financial breakthroughs in everything you do.</p><br>
+            <p>I am so incredibly proud of your hard work. It takes immense courage and dedication to step completely out of your comfort zone and move to a whole new continent. You did that to change your life and uplift your family, and watching you push forward is truly inspiring.</p><br>
+            <p>Keep shining, keep grinding, and know that I am always cheering you on.</p>
+            
+            <div class="signature">
+                With all my love,<br>
+                Your Boyfriend, Ibrahim Koros
+            </div>
+        </div>
+    </div>
+</body>
+</html>
