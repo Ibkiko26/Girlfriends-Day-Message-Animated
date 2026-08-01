@@ -46,7 +46,7 @@
         }
 
         .container {
-            max-width: 900px;
+            width: min(100%, 900px);
             padding: 40px 20px;
             text-align: center;
             animation: fadeIn 2s ease-in-out;
@@ -54,7 +54,8 @@
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 4rem;
+            font-size: clamp(2.2rem, 4vw, 4rem);
+            line-height: 1.15;
             color: var(--primary-color);
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(255, 126, 179, 0.3);
@@ -63,12 +64,12 @@
 
         .message-card {
             background: rgba(255, 255, 255, 0.9);
-            padding: 40px;
+            padding: clamp(20px, 4vw, 40px);
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             margin-bottom: 40px;
-            line-height: 1.8;
-            font-size: 1.1rem;
+            line-height: 1.7;
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
             border: 1px solid rgba(255, 126, 179, 0.2);
             transition: transform 0.3s ease;
         }
@@ -101,8 +102,8 @@
         }
 
         .photo-frame {
-            width: 230px;
-            height: 280px;
+            width: min(230px, 70vw);
+            height: min(280px, 75vw);
             border-radius: 18px;
             overflow: hidden;
             box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
@@ -176,9 +177,26 @@
             }
         }
 
+        @media (max-width: 900px) {
+            .container { padding: 24px 14px; }
+            .message-card { padding: 20px; }
+        }
+
         @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
-            .photo-frame { width: 100%; max-width: 300px; }
+            .container { padding: 20px 12px; }
+            h1 { font-size: clamp(1.9rem, 7vw, 2.8rem); margin-bottom: 16px; }
+            .gallery-scroller { padding: 6px 0 10px; }
+            .gallery-track { gap: 14px; }
+            .photo-frame { width: min(220px, 78vw); height: min(260px, 82vw); }
+            .signature { font-size: 1.8rem; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding-bottom: 20px; }
+            .container { padding: 16px 10px; }
+            .message-card { padding: 16px; border-radius: 16px; }
+            .photo-frame { width: min(190px, 80vw); height: min(220px, 84vw); }
+            .signature { font-size: 1.55rem; }
         }
     </style>
 </head>
