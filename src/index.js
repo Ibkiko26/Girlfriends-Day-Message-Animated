@@ -1,14 +1,12 @@
 export default {
-  async fetch(request, env, ctx) {
-    const url = new URL(request.url);
-    const pathname = url.pathname === '/' ? '/index.html' : url.pathname;
-    const assetPath = pathname.replace(/^\//, '');
-    const asset = await env.ASSETS.fetch(new Request(new URL(assetPath, request.url)));
+  async fetch(request, env) {
+    const asset = await env.ASSETS.fetch(request);
 
-    if (asset.ok) {
-      return asset;
+    if (asset.status === 404) {
+      const fallback = new Request(new URL('/index.html', request.url));
+      return env.ASSETS.fetch(fallback);
     }
 
-    return new Response('Not Found', { status: 404, headers: { 'content-type': 'text/plain' } });
+    return asset;
   }
 };
