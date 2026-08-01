@@ -1,7 +1,5 @@
 name = "girlfriends-day-message-animated"
 compatibility_date = "2025-01-01"
-main = "./src/index.js"
 
-[assets]
-directory = "./public"
-binding = "ASSETS"
+[site]
+bucket = "./public"
